@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
-    <title>Unity Web Player | Bible Trivia Adventure</title>
+
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <title>Bible Trivia Adventure</title>
+
     <style>
       * {
         margin: 0;
@@ -30,27 +34,27 @@
         background: #231F20;
       }
     </style>
-  </head>
-  <body>
-    <canvas id="unity-canvas" tabindex="-1"></canvas>
-    <script src="Build/TT.loader.js"></script>
-    <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        arguments: [],
-        dataUrl: "Build/TT.data",
-        frameworkUrl: "Build/TT.framework.js",
-        codeUrl: "Build/TT.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Bible Trivia Adventure",
-        productVersion: "1.0",
-		devicePixelRatio: window.devicePixelRatio,
-        // matchWebGLToCanvasSize: false,
-        // devicePixelRatio: 1,
-      }).then((unityInstance) => {
-      }).catch((message) => {
-        alert(message);
-      });
-    </script>
-  </body>
+</head>
+
+<body>
+
+<canvas id="unity-canvas" tabindex="-1"></canvas>
+
+<script src="Build/webgl-test-v1.loader.js"></script>
+
+<script>
+const canvas = document.querySelector("#unity-canvas");
+
+createUnityInstance(canvas, {
+    dataUrl: "Build/webgl-test-v1.data",
+    frameworkUrl: "Build/webgl-test-v1.framework.js",
+    codeUrl: "Build/webgl-test-v1.wasm",
+    streamingAssetsUrl: "StreamingAssets",
+    companyName: "DefaultCompany",
+    productName: "Bible Trivia Adventure",
+    productVersion: "1.0",
+});
+</script>
+
+</body>
 </html>
